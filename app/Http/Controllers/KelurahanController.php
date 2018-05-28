@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Kelurahan;
 use Illuminate\Http\Request;
+use phpDocumentor\Reflection\Types\Integer;
 
 class KelurahanController extends Controller
 {
@@ -42,11 +43,12 @@ class KelurahanController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Kelurahan  $kelurahan
-     * @return \Illuminate\Http\Response
+     * @return Kelurahan[]|\Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Model
      */
-    public function show(Kelurahan $kelurahan)
+    public function show(int $kelurahan)
     {
-        //
+        $kelurahan = Kelurahan::all()->find($kelurahan);
+        return view('kelurahan.show', compact('kelurahan'));
     }
 
     /**

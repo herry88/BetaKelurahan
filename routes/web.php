@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 
 Route::get('/kelurahan', 'KelurahanController@index');
+Route::get('/kelurahan/show/{id}', 'KelurahanController@show');
