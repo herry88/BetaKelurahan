@@ -168,6 +168,7 @@ return [
         /*
          * Package Service Providers...
          */
+        \App\Providers\BootstrapServiceProvider::class,
 
         /*
          * Application Service Providers...
